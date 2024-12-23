@@ -1,6 +1,8 @@
 #!/bin/bash
 
 DISPLAY=:0 docker run -it --rm \
+    --privileged \
+    --device=/dev/blackmagic:/dev/blackmagic \
     --name=decklinkmonitorplayer \
     --hostname=decklinkmonitorplayer \
     -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY \
